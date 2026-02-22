@@ -78,7 +78,7 @@ jobs:
   publish:
     name: Sign and publish registry
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    if: github.event_name != 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -91,6 +91,10 @@ jobs:
       - name: Write private key
         run: |
           set -euo pipefail
+          if [ -z "${MARKETPLACE_PRIVATE_KEY}" ]; then
+            echo "MARKETPLACE_PRIVATE_KEY is missing" >&2
+            exit 1
+          fi
           echo "${MARKETPLACE_PRIVATE_KEY}" > private.pem
         env:
           MARKETPLACE_PRIVATE_KEY: ${{ secrets.MARKETPLACE_PRIVATE_KEY }}
