@@ -19,6 +19,11 @@
             "id": "sqlite-storage",
             "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/sqlite-storage.json",
             "signature": "SCtwJYbFyusf1VIzV0Q6KVxo7TLURIHEiGKJ+bl7VkN0d+JYkbQx0rYVi0aC\/2rF+0Xq\/kmB23DaAVP2DD5KruNIjhR+6isTAXeRXexXs+AyoZa7yMYWO9fGdPUBYj9LBWC6sjI4rmoytp5icAnVzVhznEXXZlVLz\/YzoY7hPGawznCXfNlADu\/nGlmv+rql7rZ5NUexRj23lKUC3VeIM3c0GSfb\/wZMCcby1L5nCanzX1vc\/K6KijE3IPKz5sz0B8CRSCVLie48WlFMeyaRRFbk\/rrq2u\/KrYzgHR3OI7ydGlNWlQ+V2Lpfpl+Fp\/ER9Ae8skaq\/8+KkLJurQmJ3A=="
+        },
+        {
+            "id": "visual-builder",
+            "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/visual-builder.json",
+            "signature": "x7YYPISKCCIW0zMVncpmlq5a7on6Uts854DY9lX41LaIBW8G8O4p0hb87B8JfR5\/glYju29cAVE7neBb0ZNcYZUcoQZFf3aXEaM1DEf+Oi2cNMCjzmQ2mWTgU8nuwc+yHgAXv9clN8L\/myRTF7CqXhHs+O8vDgIj3WGXlzdAiMalqsf+IdbS\/M7+mjnzozluiU5\/JqtCSMQLVPckJrX9C8v5ZAzzUlz7PlE7MV0QCjBgf1Yb44x5gKxFb5GJV+L6Qu2fWoc6J9pQDm1FkuUQY69LPW1a+yV8yaWiW8NMgvaya8ggJ4k4HZqGlOWxLMem+5na8LNEDMcrVj7hUTBL+g=="
         }
     ]
 }

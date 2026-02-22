@@ -1,0 +1,10 @@
+{
+  "id": "visual-builder",
+  "name": "Visual Builder",
+  "version": "0.1.0",
+  "description": "Drag-and-drop page builder with responsive layouts",
+  "author": "Click CMS",
+  "packageUrl": "https://felixgeelhaar.github.io/click-cms-marketplace/packages/visual-builder-0.1.0.zip",
+  "sha256": "93757924cbe9831453cbb8d42d71beb4b9a09eadf5249fcf75ba04cae2d1def0",
+  "manifestUrl": "https://felixgeelhaar.github.io/click-cms-marketplace/manifests/visual-builder.json"
+}
