@@ -1,0 +1,113 @@
+name: Marketplace Registry
+
+on:
+  pull_request:
+    paths:
+      - "manifests/*.json"
+      - "packages/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "manifests/*.json"
+      - "packages/**"
+
+jobs:
+  validate:
+    name: Validate manifests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate manifests + packages
+        run: |
+          set -euo pipefail
+          for manifest in manifests/*.json; do
+            if [ ! -f "$manifest" ]; then
+              continue
+            fi
+            id=$(jq -r '.id' "$manifest")
+            name=$(jq -r '.name' "$manifest")
+            version=$(jq -r '.version' "$manifest")
+            packageUrl=$(jq -r '.packageUrl' "$manifest")
+            sha=$(jq -r '.sha256' "$manifest")
+            manifestUrl=$(jq -r '.manifestUrl' "$manifest")
+
+            if [ -z "$id" ] || [ "$id" = "null" ]; then
+              echo "Missing id in $manifest" >&2
+              exit 1
+            fi
+            if [ -z "$name" ] || [ "$name" = "null" ]; then
+              echo "Missing name in $manifest" >&2
+              exit 1
+            fi
+            if [ -z "$version" ] || [ "$version" = "null" ]; then
+              echo "Missing version in $manifest" >&2
+              exit 1
+            fi
+            if [ -z "$packageUrl" ] || [ "$packageUrl" = "null" ]; then
+              echo "Missing packageUrl in $manifest" >&2
+              exit 1
+            fi
+            if [ -z "$sha" ] || [ "$sha" = "null" ]; then
+              echo "Missing sha256 in $manifest" >&2
+              exit 1
+            fi
+            if [ -z "$manifestUrl" ] || [ "$manifestUrl" = "null" ]; then
+              echo "Missing manifestUrl in $manifest" >&2
+              exit 1
+            fi
+
+            file=$(basename "$packageUrl")
+            if [ ! -f "packages/$file" ]; then
+              echo "Missing package file packages/$file for $manifest" >&2
+              exit 1
+            fi
+            actual=$(shasum -a 256 "packages/$file" | awk '{print $1}')
+            if [ "$actual" != "$sha" ]; then
+              echo "SHA256 mismatch for $manifest" >&2
+              echo "Expected: $sha" >&2
+              echo "Actual:   $actual" >&2
+              exit 1
+            fi
+          done
+
+  publish:
+    name: Sign and publish registry
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Write private key
+        run: |
+          set -euo pipefail
+          echo "${MARKETPLACE_PRIVATE_KEY}" > private.pem
+        env:
+          MARKETPLACE_PRIVATE_KEY: ${{ secrets.MARKETPLACE_PRIVATE_KEY }}
+
+      - name: Build registry
+        run: |
+          set -euo pipefail
+          php scripts/build-registry-from-manifests.php manifests private.pem registry.json
+
+      - name: Commit registry
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No registry changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add registry.json
+          git commit -m "Update registry"
+          git push
