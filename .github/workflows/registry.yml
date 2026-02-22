@@ -1,6 +1,7 @@
 name: Marketplace Registry
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - "manifests/*.json"
