@@ -1,3 +1,24 @@
 {
-  "plugins": []
+    "plugins": [
+        {
+            "id": "graphql",
+            "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/graphql.json",
+            "signature": "d2V8VfbdRP3l4OZGZ0s\/WPy4\/IBKYFgVLH5\/WlyRODWm01w8meB0DF5aO6oIjD8Tu0pd3eSdp2Iv+IqHUFlWcXpFF+r0LEBN6iD+EC+hIZjVzk3R3QcdXvYhjuPfBKAf4b29nRbeEeL4tvGoVVvJ7TsziRPxPF\/yTLM1wDpwYkqHdZHEnGLtjTWSBMEGxr\/FRK31vmt2hETVl9lE4PC76SlxMNnhXdjINzwwwwzieWo+t4uzEN9EPM8VW2j\/rL4aU+TG8UmI8NSksU4KiSO3UcHZauaCJzJjAUP5i\/C2t9HbmDztBRnfnXVUQNdmTGYjC+MOFWJlApgvw76UC2TO4A=="
+        },
+        {
+            "id": "json-storage",
+            "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/json-storage.json",
+            "signature": "pDw7PCMZ\/h3fFGqTqUmrEXSQHAtCg+6HfUKXBietmI\/NPr65KchXs\/dxCKXp7FEw\/pfYjMTeFO5gUH5wz4PRh+uqWAb94BeAx8MDzFiC1gGUgcK+0vRM0wLg7CcARQQyOxJuDTJ7\/Ix0de+4XD5HLmdivzZbGMP53Y074Vhdhc2KdvRoubyE4Cr0vujdBvrfUOi8e\/xey6NnV8bJ1Dszw3lA1n9VJ\/zAWvYW4pGnjjcyzVW1gUPVnlSfn8+Rk7sqWHty8D3l\/BpOqHi+iP9+B+4gEQmBHOsTUZ3Am+so97qemT3MLQqZkB2VyE659ATooeioXYgek3DgeApiPGIPpA=="
+        },
+        {
+            "id": "rest-api",
+            "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/rest-api.json",
+            "signature": "Z6MGldrYWjXgPA8SRMJIsISqMfk18ijAg7ZIZPoUTc5Ck3Es7RWKQHaifuMnRIEzuBRZLkLlZiQhOe2X7vu1ZUS0A3+HfIg6igWCftJlTbir2Ten2oa4zkYUSltjDXhiSpHdRE1s2tv0XSU8DTQUR23sVJsSRPKpBQ7kllx4gBocfdNXUf0W9TaCmPBYhRs2yIlBkRIvHViw3E8GhRmY21Crw2pf\/7rfwG+wqQzzOv\/ahqsIo03McosJK3CZJ6MHeMggnS7ykR7A1vcjZuy3TsGJm8EndFqmU5XBdwBhUylNfaYKPdwCnBiK0+zsREGQuq3RrogYKrss\/u\/In5sesA=="
+        },
+        {
+            "id": "sqlite-storage",
+            "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/sqlite-storage.json",
+            "signature": "SCtwJYbFyusf1VIzV0Q6KVxo7TLURIHEiGKJ+bl7VkN0d+JYkbQx0rYVi0aC\/2rF+0Xq\/kmB23DaAVP2DD5KruNIjhR+6isTAXeRXexXs+AyoZa7yMYWO9fGdPUBYj9LBWC6sjI4rmoytp5icAnVzVhznEXXZlVLz\/YzoY7hPGawznCXfNlADu\/nGlmv+rql7rZ5NUexRj23lKUC3VeIM3c0GSfb\/wZMCcby1L5nCanzX1vc\/K6KijE3IPKz5sz0B8CRSCVLie48WlFMeyaRRFbk\/rrq2u\/KrYzgHR3OI7ydGlNWlQ+V2Lpfpl+Fp\/ER9Ae8skaq\/8+KkLJurQmJ3A=="
+        }
+    ]
 }

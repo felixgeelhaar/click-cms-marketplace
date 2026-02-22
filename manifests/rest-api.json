@@ -1,0 +1,10 @@
+{
+  "id": "rest-api",
+  "name": "REST API",
+  "version": "1.0.0",
+  "description": "REST API for headless content access",
+  "author": "Click CMS",
+  "packageUrl": "https://felixgeelhaar.github.io/click-cms-marketplace/packages/rest-api-1.0.0.zip",
+  "sha256": "680e679b9ff7bdf4cce2d5bd9d5c7d7892ca863cbe868dbfc439dbf5bbd2832f",
+  "manifestUrl": "https://felixgeelhaar.github.io/click-cms-marketplace/manifests/rest-api.json"
+}

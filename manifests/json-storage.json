@@ -1,0 +1,10 @@
+{
+  "id": "json-storage",
+  "name": "JSON Storage",
+  "version": "1.0.0",
+  "description": "Default JSON file-based storage backend",
+  "author": "Click CMS",
+  "packageUrl": "https://felixgeelhaar.github.io/click-cms-marketplace/packages/json-storage-1.0.0.zip",
+  "sha256": "eff7519caa294e14d35ed7d41b7e6bc8966fcfde6108e9fadfbb0a5209bd96cc",
+  "manifestUrl": "https://felixgeelhaar.github.io/click-cms-marketplace/manifests/json-storage.json"
+}
