@@ -34,6 +34,8 @@ Each plugin needs:
 shasum -a 256 packages/my-plugin-1.2.3.zip
 ```
 
+The manifest ID must match the ID Click generates from the package name (lowercase, non-alphanumeric characters replaced by hyphens). For example, `GraphQL API` uses `graphql-api`. The manifest filename, URL, name and version must agree with the packaged metadata. Run `python3 scripts/validate-packages.py` before submitting.
+
 ## What happens on merge
 
 GitHub Actions validates the manifest, signs it using a private key stored in secrets,

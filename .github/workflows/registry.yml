@@ -6,12 +6,16 @@ on:
     paths:
       - "manifests/*.json"
       - "packages/**"
+      - "scripts/**"
+      - ".github/workflows/**"
   push:
     branches:
       - main
     paths:
       - "manifests/*.json"
       - "packages/**"
+      - "scripts/**"
+      - ".github/workflows/**"
 
 jobs:
   validate:
@@ -22,58 +26,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate manifests + packages
+      - name: Validate manifests and package identity
         run: |
-          set -euo pipefail
-          for manifest in manifests/*.json; do
-            if [ ! -f "$manifest" ]; then
-              continue
-            fi
-            id=$(jq -r '.id' "$manifest")
-            name=$(jq -r '.name' "$manifest")
-            version=$(jq -r '.version' "$manifest")
-            packageUrl=$(jq -r '.packageUrl' "$manifest")
-            sha=$(jq -r '.sha256' "$manifest")
-            manifestUrl=$(jq -r '.manifestUrl' "$manifest")
-
-            if [ -z "$id" ] || [ "$id" = "null" ]; then
-              echo "Missing id in $manifest" >&2
-              exit 1
-            fi
-            if [ -z "$name" ] || [ "$name" = "null" ]; then
-              echo "Missing name in $manifest" >&2
-              exit 1
-            fi
-            if [ -z "$version" ] || [ "$version" = "null" ]; then
-              echo "Missing version in $manifest" >&2
-              exit 1
-            fi
-            if [ -z "$packageUrl" ] || [ "$packageUrl" = "null" ]; then
-              echo "Missing packageUrl in $manifest" >&2
-              exit 1
-            fi
-            if [ -z "$sha" ] || [ "$sha" = "null" ]; then
-              echo "Missing sha256 in $manifest" >&2
-              exit 1
-            fi
-            if [ -z "$manifestUrl" ] || [ "$manifestUrl" = "null" ]; then
-              echo "Missing manifestUrl in $manifest" >&2
-              exit 1
-            fi
-
-            file=$(basename "$packageUrl")
-            if [ ! -f "packages/$file" ]; then
-              echo "Missing package file packages/$file for $manifest" >&2
-              exit 1
-            fi
-            actual=$(shasum -a 256 "packages/$file" | awk '{print $1}')
-            if [ "$actual" != "$sha" ]; then
-              echo "SHA256 mismatch for $manifest" >&2
-              echo "Expected: $sha" >&2
-              echo "Actual:   $actual" >&2
-              exit 1
-            fi
-          done
+          python3 scripts/test_validate_packages.py
+          python3 scripts/validate-packages.py
 
   publish:
     name: Sign and publish registry
@@ -87,6 +43,11 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+
+      - name: Validate manifests and package identity
+        run: |
+          python3 scripts/test_validate_packages.py
+          python3 scripts/validate-packages.py
 
       - name: Write private key
         run: |
