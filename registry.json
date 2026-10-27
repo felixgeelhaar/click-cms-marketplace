@@ -1,9 +1,9 @@
 {
     "plugins": [
         {
-            "id": "graphql",
-            "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/graphql.json",
-            "signature": "d2V8VfbdRP3l4OZGZ0s\/WPy4\/IBKYFgVLH5\/WlyRODWm01w8meB0DF5aO6oIjD8Tu0pd3eSdp2Iv+IqHUFlWcXpFF+r0LEBN6iD+EC+hIZjVzk3R3QcdXvYhjuPfBKAf4b29nRbeEeL4tvGoVVvJ7TsziRPxPF\/yTLM1wDpwYkqHdZHEnGLtjTWSBMEGxr\/FRK31vmt2hETVl9lE4PC76SlxMNnhXdjINzwwwwzieWo+t4uzEN9EPM8VW2j\/rL4aU+TG8UmI8NSksU4KiSO3UcHZauaCJzJjAUP5i\/C2t9HbmDztBRnfnXVUQNdmTGYjC+MOFWJlApgvw76UC2TO4A=="
+            "id": "graphql-api",
+            "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/graphql-api.json",
+            "signature": "wKzZq0t27AOmD2ZCCfsiSeOtoEuSUqaMepXRsUnDolyfS9Nv\/9z6avOtBkMwIpgBtcktQ9PNNIYsQR+b0P9mu\/Th8RC+hPOk46BjsMPv0rOQyC9QKfwicx\/o\/h\/ZqcpYzKeotqo6z0GX3SeFlH4B7AJVsdlm2lnsUjo7xmSor1EJP2SsuU0iFx8vjl+wotdcvMtgmi0wQTvtNFNDIntVzX6A4\/NTI0mP\/lvzMEA9h3GW\/CDIiRQ+OCT6SY7l+YT9YCjtjc34GjH45RNZyV4VXLHzyUNRkujyo0V3R4Ss7Al+lbSOHtZCvLFj9S8DY5ynqEZ+RNCkZCDcP3334UEVjw=="
         },
         {
             "id": "json-storage",
@@ -23,7 +23,7 @@
         {
             "id": "visual-builder",
             "manifestUrl": "https:\/\/felixgeelhaar.github.io\/click-cms-marketplace\/manifests\/visual-builder.json",
-            "signature": "x7YYPISKCCIW0zMVncpmlq5a7on6Uts854DY9lX41LaIBW8G8O4p0hb87B8JfR5\/glYju29cAVE7neBb0ZNcYZUcoQZFf3aXEaM1DEf+Oi2cNMCjzmQ2mWTgU8nuwc+yHgAXv9clN8L\/myRTF7CqXhHs+O8vDgIj3WGXlzdAiMalqsf+IdbS\/M7+mjnzozluiU5\/JqtCSMQLVPckJrX9C8v5ZAzzUlz7PlE7MV0QCjBgf1Yb44x5gKxFb5GJV+L6Qu2fWoc6J9pQDm1FkuUQY69LPW1a+yV8yaWiW8NMgvaya8ggJ4k4HZqGlOWxLMem+5na8LNEDMcrVj7hUTBL+g=="
+            "signature": "TKDG\/+PnW1Pskp6floH7I4+1FbLzRDKjo7e8+IAslOMETUOMw7Vt7HZUOLgwp8dQ0F4JKAzEwW2YrLZEQhuKI\/OMMuFt3Ya87duNaS7PvGoClra6YSD+\/0f9tjwiv7XqJNW1boaIbnK9VaECewYs2C8FHnsodD+0sqP3QzBFubwl3Uqwv5QU4+PznOdHwp0gulrBCyOJcmpq+eYpFcf1NxLgwaGpHtl4HRKoh\/u3hztFlcPFlnPKMXQbLfP2Ge7jHqSpyYGHcisR0HxH51uZwnNhJGi9Lsrro2\/ezEt3Xi9g3CGJ2Ptcf1xdoyz\/ko8fELRmtv7hmCtr8pt6wJ+vxw=="
         }
     ]
 }
