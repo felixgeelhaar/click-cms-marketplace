@@ -1,0 +1,10 @@
+{
+  "id": "graphql-api",
+  "name": "GraphQL API",
+  "version": "1.0.0",
+  "description": "GraphQL API for flexible content querying",
+  "author": "Click CMS",
+  "packageUrl": "https://felixgeelhaar.github.io/click-cms-marketplace/packages/graphql-api-1.0.0.zip",
+  "sha256": "aa40a997e83aa7a0dca96724a10bc1045ff5c42738bb1c262e61fb5842744d9b",
+  "manifestUrl": "https://felixgeelhaar.github.io/click-cms-marketplace/manifests/graphql-api.json"
+}
