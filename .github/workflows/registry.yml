@@ -33,6 +33,9 @@ jobs:
 
   publish:
     name: Sign and publish registry
+    permissions:
+      contents: write
+      pages: write
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     steps:
@@ -77,3 +80,9 @@ jobs:
           git add registry.json
           git commit -m "Update registry"
           git push
+
+      # Commits made by GITHUB_TOKEN do not trigger branch-based Pages builds.
+      - name: Publish signed registry to Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"
